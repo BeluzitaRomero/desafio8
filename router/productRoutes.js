@@ -16,7 +16,7 @@ router.get("/:id?", async (req, res) => {
   } else if (prodExists) {
     res.status(200).json(await container.getById(req.params.id));
   } else {
-    res.status(400).send({ error: "Producto no econtrado" });
+    res.status(404).send({ error: "Producto no econtrado" });
   }
 });
 
@@ -32,7 +32,7 @@ router.put("/:id", async (req, res) => {
       .status(200)
       .send(await container.updateProduct(req.body, req.params.id));
   } else {
-    res.status(400).send({ error: "No existe el producto a modificar" });
+    res.status(404).send({ error: "No existe el producto a modificar" });
   }
 });
 
@@ -44,7 +44,7 @@ router.delete("/:id", async (req, res) => {
     res.status(200).send(await container.deleteById(req.params.id));
   } else {
     res
-      .status(400)
+      .status(404)
       .send({ error: "El producto que quiere eliminar no existe" });
   }
 });
