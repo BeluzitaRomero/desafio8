@@ -1,4 +1,5 @@
 //Config del knex
+//PRODUCTS
 const knex = require("knex")({
   client: "mysql",
   connection: {

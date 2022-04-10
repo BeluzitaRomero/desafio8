@@ -19,7 +19,7 @@ class Container {
     await this.knex("products")
       .insert(product)
       .then(() => {
-        console.log("Registro guardado");
+        console.log("Producto guardado");
         return { message: "Producto guardado" };
       })
       .catch((err) => {
