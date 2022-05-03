@@ -19,6 +19,15 @@ app.get("/chat", (req, res) => {
 const productsRouter = require("./router/productRoutes");
 app.use("/api/products", productsRouter);
 
+//PUG DESAFIO 11
+const renderProducts = require("./productos-test");
+app.set("views", "./src/views");
+app.set("view engine", "pug");
+
+app.get("/api/productos-test", async (req, res) => {
+  res.render("productos-test", { data: await renderProducts() });
+});
+
 //Servidor
 const http = require("http");
 const server = http.createServer(app);

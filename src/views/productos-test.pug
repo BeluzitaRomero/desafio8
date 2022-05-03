@@ -1,0 +1,22 @@
+html 
+    head
+        title="PUG"
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")
+    body(style="background-color: gray")
+        section(class="container d-flex flex-column align-items-center")
+            div(class="container d-flex flex-row justify-content-center")
+                    div(class="card my-3 mx-3" style="width: 18rem;")
+                        table(class="table")
+                            thead
+                                tr
+                                    th(scope="col")="Producto"
+                                    td(scope="col")="Precio"
+                                    td(scope="col")="Imagen"
+                            thead
+                            tbody
+                             each product in data
+                                tr
+                                    th=product.title
+                                    td=product.price
+                                    td
+                                        img(src=product.thumbnail style="width: 5rem")
